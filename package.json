@@ -1,0 +1,30 @@
+{
+  "name": "agent-canvas",
+  "version": "1.0.0",
+  "description": "Zero-network React 18 Canvas runner and UI/FE prototyping studio for AI agents",
+  "type": "module",
+  "bin": {
+    "agent-canvas": "./bin/cli.js",
+    "cursor-canvas": "./bin/cli.js",
+    "agent-canvas-mcp": "./bin/mcp-server.js"
+  },
+  "scripts": {
+    "test": "node test/compiler.test.js && node test/finder.test.js && node test/mcp-server.test.js"
+  },
+  "keywords": [
+    "antigravity",
+    "cursor",
+    "canvas",
+    "react",
+    "prototyping",
+    "mcp",
+    "ui-mockups"
+  ],
+  "author": "Tal Hason",
+  "license": "MIT",
+  "dependencies": {
+    "esbuild-wasm": "^0.28.2",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  }
+}
