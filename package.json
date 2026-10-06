@@ -5,7 +5,6 @@
   "type": "module",
   "bin": {
     "agent-canvas": "./bin/cli.js",
-    "cursor-canvas": "./bin/cli.js",
     "agent-canvas-mcp": "./bin/mcp-server.js"
   },
   "scripts": {
@@ -13,7 +12,6 @@
   },
   "keywords": [
     "antigravity",
-    "cursor",
     "canvas",
     "react",
     "prototyping",

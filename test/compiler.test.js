@@ -23,12 +23,12 @@ async function runTests() {
     assert.match(result, /default-src 'none'/);
   });
 
-  await test('Import destructuring of react/react-dom/cursor', async () => {
+  await test('Import destructuring of react/react-dom/canvas', async () => {
     const { compile } = await import('../lib/compiler.js');
     const result = await compile(`
       import { useState } from 'react';
       import { createRoot } from 'react-dom/client';
-      import { Card } from 'cursor/canvas';
+      import { Card } from 'agent/canvas';
     `);
     assert.ok(typeof result === 'string');
     assert.ok(result.length > 0);

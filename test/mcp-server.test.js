@@ -37,7 +37,7 @@ async function runTests() {
 
   await test('list', async () => {
     const res = await callMcp([{ jsonrpc: '2.0', id: 2, method: 'tools/list', params: {} }]);
-    assert.ok(res[0].result.tools.some(t => t.name === 'list_cursor_canvases'));
+    assert.ok(res[0].result.tools.some(t => t.name === 'list_agent_canvases'));
   });
 
   await test('invalid method', async () => {
@@ -56,7 +56,7 @@ async function runTests() {
     assert.equal(res[0].error.code, -32602);
   });
 
-  await test('list_agent_canvases and list_cursor_canvases', async () => {
+  await test('list_agent_canvases', async () => {
     const res = await callMcp([{ jsonrpc: '2.0', id: 5, method: 'tools/call', params: { name: 'list_agent_canvases' } }]);
     assert.ok(res[0].result.content[0].text);
   });

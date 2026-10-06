@@ -2,17 +2,17 @@
 
 > 100% Standalone React 18 Canvas runner, UI/FE prototyping studio, and MCP server for AI coding assistants (Google Antigravity & others).
 
-`agent-canvas` lets AI coding agents and developers compile, render, preview, and author interactive `.canvas.tsx` React artifacts **completely offline with zero external dependencies**. It is **100% standalone and fully decoupled from Cursor** — no Cursor installation or proprietary binaries required.
+`agent-canvas` lets AI coding agents and developers compile, render, preview, and author interactive `.canvas.tsx` React artifacts **completely offline with zero external dependencies**. It is **100% standalone** — no external IDE installation or proprietary binaries required.
 
 ---
 
 ## Features
 
-- **100% Standalone**: Completely decoupled from Cursor. Runs anywhere pure Node.js is installed (Linux, macOS, Windows, CI/CD, Docker).
+- **100% Standalone**: Completely self-contained. Runs anywhere pure Node.js is installed (Linux, macOS, Windows, CI/CD, Docker).
 - **Zero-Network Transpilation**: Fast compilation using local `esbuild-wasm` with no external bundlers, dev-servers, or internet connectivity required.
 - **Full React 18 & UI Prototyping**: Build stateful, interactive frontend prototypes (`useState`, `useEffect`, `Table`, `Stat`, `Badge`, `Button`, `TextInput`, `Select`) with live interactive controls.
 - **Complete Design System**: Built-in implementations for 45+ UI primitives (`Card`, `Grid`, `Stack`, `Row`, `BarChart`, `LineChart`, `PieChart`, `DiffView`, etc.).
-- **Dual SDK Import Compatibility**: Canvases can import from either `'agent/canvas'` or `'cursor/canvas'` seamlessly.
+- **Modern SDK**: Canvases import directly from `'agent/canvas'`.
 - **Host Theme Adaptation**: CSS bridge (`useHostTheme`) dynamically mirrors dark and light IDE themes.
 - **Dual Antigravity Viewport**: Renders directly as durable Antigravity side-pane **Artifacts** and inline chat widgets (`<agent-embed>`).
 - **MCP Server & CLI**: Stdio JSON-RPC MCP server (`list_agent_canvases`, `render_agent_canvas`) and standalone CLI (`agent-canvas list`, `agent-canvas render`).
@@ -62,7 +62,6 @@ To register with Antigravity or any MCP client, add to your MCP configuration:
 
 - `list_agent_canvases`: Discovers all `.canvas.tsx` files across projects and workspace.
 - `render_agent_canvas`: Compiles a target `.canvas.tsx` file into standalone, self-contained HTML.
-- Backward-compatible aliases: `list_cursor_canvases`, `render_cursor_canvas`.
 
 ---
 
@@ -76,7 +75,7 @@ import React, { useState } from 'react';
 import {
   Stack, Row, Grid, Card, CardHeader, CardBody,
   Stat, Badge, Button, Table, Callout, H1, Text
-} from 'cursor/canvas';
+} from 'agent/canvas';
 
 export default function Dashboard() {
   const [active, setActive] = useState(true);
